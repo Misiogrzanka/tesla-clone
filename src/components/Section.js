@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 const Section = ({
 	title,
@@ -12,15 +13,19 @@ const Section = ({
 		// Wrapper for the main content of the page
 
 		<Wrap bgImage={backgroundImage}>
-			<ItemText>
-				<h1>{title}</h1>
-				<p>{description}</p>
-			</ItemText>
+			<Fade bottom>
+				<ItemText>
+					<h1>{title}</h1>
+					<p>{description}</p>
+				</ItemText>
+			</Fade>
 			<Buttons>
-				<ButtonGroup>
-					<LeftButton>{leftBtnText}</LeftButton>
-					{rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-				</ButtonGroup>
+				<Fade bottom>
+					<ButtonGroup>
+						<LeftButton>{leftBtnText}</LeftButton>
+						{rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+					</ButtonGroup>
+				</Fade>
 				{/* Down arrow component redirecting to the next model */}
 				<DownArrow src="/images/down-arrow.svg" />
 			</Buttons>
